@@ -1,0 +1,28 @@
+/* Tailwind basis, componenten en utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Flux styling in components layer */
+@layer components {
+    [data-flux-field]:not(ui-radio, ui-checkbox) {
+        @apply grid gap-2;
+    }
+
+    [data-flux-label] {
+        @apply mb-0 leading-tight;
+    }
+
+    input:focus[data-flux-control],
+    textarea:focus[data-flux-control],
+    select:focus[data-flux-control] {
+        @apply outline-none ring-2 ring-zinc-800 ring-offset-2 ring-offset-zinc-50;
+    }
+
+    /* Dark mode focus */
+    .dark input:focus[data-flux-control],
+    .dark textarea:focus[data-flux-control],
+    .dark select:focus[data-flux-control] {
+        @apply ring-2 ring-white ring-offset-2 ring-offset-zinc-900;
+    }
+}
